@@ -39,8 +39,29 @@ pulic static Integer getMaxValue(List valueList){
 ```
 //在您自己的READ.md中，答案写到下面的位置
 
+public static void main(String[] args) {
+        List li=new ArrayList<>();
+        li.add(1);
+        li.add("牛奶");
+        li.add(1.234);
+        li.add('a');
+        li.add(true);
+        li.add(1);
+        li.add(132423);
+        li.add(1);
+        li.add(143534532);
+        System.out.println(li);
+        List<Integer> res = new ArrayList<>();
+        for (int i = 0; i < li.size(); i++) {
+            if(li.get(i) instanceof Integer){
+                res.add((Integer) li.get(i));
+            }
+        }
+        Object[] array = res.toArray();
+        Arrays.sort(array);
+        System.out.println(array[array.length-1]);
 
 //这样做的原因写到下面
 
-
+答：原因是根据需求是从一个List中取得最大整型值，首先判断运用了List容器，就会用到对应的方法及函数，其次题中并未提及List容器中存储什么类型的数据，所以需要判断并筛选符合整数类型的值存入新的List容器中，再根据Java类库的对应工具类及方法将其进行排序处理，最终取出最大值。
 ```
